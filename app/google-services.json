@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "442885767294",
+    "firebase_url": "https://baseminingdiplom-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "baseminingdiplom",
+    "storage_bucket": "baseminingdiplom.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:442885767294:android:5c115503b5a7a5910f182f",
+        "android_client_info": {
+          "package_name": "com.example.selflearning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "442885767294-4612bflricq7bk31d7prj628vuuinf6d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsNqHL3Ivqfjv3UFdAYB8bsnCUQ8GMJns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "442885767294-4612bflricq7bk31d7prj628vuuinf6d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
