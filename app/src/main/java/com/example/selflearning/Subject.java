@@ -1,10 +1,11 @@
 package com.example.selflearning;
 
 public class Subject {
-    public String name, description;
+    public String id, name, description;
     public Integer course, semester;
 
-    public Subject(String name, String description, Integer course, Integer semester) {
+    public Subject(String id, String name, String description, Integer course, Integer semester) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.course = course;

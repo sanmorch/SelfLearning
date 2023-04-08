@@ -30,6 +30,7 @@
             android:name=".MainActivity"
             android:exported="true">
         </activity>
+        <activity android:name="com.example.selflearning.SubjectPageActivity" />
     </application>
 
 </manifest>
