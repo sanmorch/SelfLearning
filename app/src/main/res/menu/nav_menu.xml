@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn = "navigation_view">
+
+    <group
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/nav_main"
+            android:title="Главная"/>
+
+        <item
+            android:id="@+id/nav_first_course"
+            android:icon="@drawable/nav_first_course"
+            android:title="Первый курс"/>
+
+        <item
+            android:id="@+id/nav_second_course"
+            android:icon="@drawable/nav_second_course"
+            android:title="Второй курс"/>
+
+        <item
+            android:id="@+id/nav_third_course"
+            android:icon="@drawable/nav_third_course"
+            android:title="Третий курс"/>
+
+        <item
+            android:id="@+id/nav_fourth_course"
+            android:icon="@drawable/nav_fourth_couse"
+            android:title="Четвертый курс"/>
+    </group>
+
+    <item
+        android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/nav_settings"
+                android:title="Настройки"/>
+
+            <item
+                android:id="@+id/nav_about_us"
+                android:icon="@drawable/nav_about"
+                android:title="О приложении"/>
+
+            <item
+                android:id="@+id/nav_log_out"
+                android:icon="@drawable/nav_log_out"
+                android:title="Выйти из аккаунта"/>
+        </menu>
+    </item>
+</menu>
