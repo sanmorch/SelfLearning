@@ -1,4 +1,4 @@
-package com.example.selflearning;
+package com.example.selflearning.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,13 +11,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.selflearning.DBobjects.User;
+import com.example.selflearning.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
-
-import org.jetbrains.annotations.NotNull;
 
 public class SignupActivity extends AppCompatActivity {
 

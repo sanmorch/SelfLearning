@@ -5,11 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstCourseFragment">
+    tools:context=".Fragments.FirstCourseFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/headingTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/nav_first_course"
@@ -23,6 +23,62 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <LinearLayout
+        android:id="@+id/linearForButtons"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/headingTextView"
+        app:layout_constraintStart_toStartOf="parent">
+
+        
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggleButtonGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:onClick="changeColor"
+            app:singleSelection="true">
+
+        <Button
+            android:id="@+id/firstSemesterButton"
+            android:layout_width="50dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text= "@string/buttonFirstSem"
+            android:layout_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            android:backgroundTint="@color/bg_selector_pressed"
+            android:textColor="@color/text_selector_pressed"
+            app:strokeColor="@color/stroke_selector_pressed"
+            app:strokeWidth="2dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+        <Button
+            android:id="@+id/secondSemesterButton"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            app:strokeWidth="2dp"
+            android:layout_weight="1"
+            android:text= "@string/buttonSecondSem"
+            app:layout_constraintStart_toStartOf="parent"
+            android:backgroundTint="@color/bg_selector_pressed"
+            android:textColor="@color/text_selector_pressed"
+            app:strokeColor="@color/stroke_selector_pressed"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+    </LinearLayout>
+
+
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="409dp"
         android:layout_height="589dp"
@@ -30,7 +86,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/linearForButtons"
         app:layout_constraintVertical_bias="0.027">
 
         <LinearLayout

@@ -1,4 +1,4 @@
-package com.example.selflearning;
+package com.example.selflearning.DBobjects;
 
 public class Subject {
     public String id, name, description;

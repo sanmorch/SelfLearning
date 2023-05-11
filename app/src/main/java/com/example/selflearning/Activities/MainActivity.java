@@ -1,4 +1,4 @@
-package com.example.selflearning;
+package com.example.selflearning.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -11,6 +11,14 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.selflearning.Fragments.AboutUsFragment;
+import com.example.selflearning.Fragments.FirstCourseFragment;
+import com.example.selflearning.Fragments.FourthCourseFragment;
+import com.example.selflearning.Fragments.HomeFragment;
+import com.example.selflearning.R;
+import com.example.selflearning.Fragments.SecondCourseFragment;
+import com.example.selflearning.Fragments.SettingsFragment;
+import com.example.selflearning.Fragments.ThirdCouseFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {

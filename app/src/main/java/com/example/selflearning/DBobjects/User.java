@@ -1,4 +1,4 @@
-package com.example.selflearning;
+package com.example.selflearning.DBobjects;
 
 public class User {
     public String name, email, username;
