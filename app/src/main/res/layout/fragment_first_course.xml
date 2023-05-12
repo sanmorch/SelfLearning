@@ -92,23 +92,28 @@
             android:id="@+id/linear_for_menu_level2"
             android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/nameSemesterFirstCourse"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:background="@color/white"
-                    android:gravity="center"
-                    android:paddingStart="10dp"
-                    android:paddingLeft="150dp"
-                    android:text="Первый семестр"
-                    android:textColor="@color/green_contrast"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/linear_for_menu_level2" />
+            <TextView
+                android:id="@+id/nameSemesterFirstCourse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:paddingStart="10dp"
+                android:paddingLeft="150dp"
+                android:text="Первый семестр"
+                android:textColor="@color/green_contrast"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/linear_for_menu_level2" />
+
+            <ListView
+                android:id="@+id/listFirstCourse"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
