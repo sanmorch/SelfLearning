@@ -60,7 +60,7 @@ public class FirstCourseFragment extends Fragment implements View.OnClickListene
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_first_course, container, false);
         init(view);
-        getDataFromDBFirstSemester();
+        getDataFromDB(1,1);
         setOnClickItem();
         return view;
     }
@@ -93,7 +93,7 @@ public class FirstCourseFragment extends Fragment implements View.OnClickListene
     }
 
     // for getting data from db to listView
-    private void getDataFromDBFirstSemester() {
+    private void getDataFromDB(int course, int semester) {
         ValueEventListener vListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -103,7 +103,7 @@ public class FirstCourseFragment extends Fragment implements View.OnClickListene
                 for (DataSnapshot ds : snapshot.getChildren()) {
                     Subject subject = ds.getValue(Subject.class);
                     assert subject != null;
-                    if (subject.course == 1 && subject.semester == 1) {
+                    if (subject.course == course && subject.semester == semester) {
                         listData.add(subject.name);
                         listSubject.add(subject);
                     }
@@ -125,10 +125,11 @@ public class FirstCourseFragment extends Fragment implements View.OnClickListene
         switch (view.getId()) {
             case R.id.firstSemesterButton:
                 semesterName.setText("Первый семестер");
-                getDataFromDBFirstSemester();
+                getDataFromDB(1,1);
                 break;
             case R.id.secondSemesterButton:
-                semesterName.setText("Второй семестер");
+                semesterName.setText("Второй семестр");
+                getDataFromDB(1, 2);
                 break;
         }
     }
