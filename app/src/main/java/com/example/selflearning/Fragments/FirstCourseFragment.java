@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.selflearning.Activities.SubjectPageActivity;
 import com.example.selflearning.Constant;
@@ -32,15 +33,13 @@ import java.util.EventListener;
 import java.util.List;
 
 
-public class FirstCourseFragment extends Fragment  {
+public class FirstCourseFragment extends Fragment implements View.OnClickListener {
 
-    protected ListView listViewFirstSemester, listViewSecondSemester;
     protected MaterialButtonToggleGroup toggleGroup;
-    protected Button firstSemesterButton, secondSemesterButton;
-    private ArrayAdapter<String> adapterFirstSemester, adapterSecondSemester;
-    private List<String> listDataFirstSemester, listDataSecondSemester;
-    private List<Subject> listSubject;
+
     private DatabaseReference databaseReference;
+    private TextView semesterName;
+    private Button firstSemesterButton, secondSemesterButton;
     private String SUBJECT_KEY = "Subjects";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,86 +47,36 @@ public class FirstCourseFragment extends Fragment  {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_first_course, container, false);
         init(view);
+        //getDataFromDB();
         return view;
     }
 
     //initialize variables
     protected void init(View view) {
-        listSubject = new ArrayList<>();
+
+        semesterName = view.findViewById(R.id.nameSemesterFirstCourse);
 
         //init for toggleGroup
         toggleGroup = view.findViewById(R.id.toggleButtonGroup);
 
         // init for first semester
-        listViewFirstSemester = view.findViewById(R.id.listViewFirstSemester);
         firstSemesterButton = view.findViewById(R.id.firstSemesterButton);
-        listDataFirstSemester = new ArrayList<>();
-        adapterFirstSemester = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1,listDataFirstSemester);
-        listViewFirstSemester.setAdapter(adapterFirstSemester);
+        firstSemesterButton.setOnClickListener(this);
         // init for second semester
-        listViewSecondSemester = view.findViewById(R.id.listViewSecondSemester);
         secondSemesterButton = view.findViewById(R.id.secondSemesterButton);
-        listDataSecondSemester = new ArrayList<>();
-        adapterSecondSemester = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1,listDataSecondSemester);
-        listViewSecondSemester.setAdapter(adapterSecondSemester);
-
+        secondSemesterButton.setOnClickListener(this);
         databaseReference = FirebaseDatabase.getInstance().getReference(SUBJECT_KEY);
-
-        getDataFromDB();
     }
 
-    private void getDataFromDB() {
-        ValueEventListener vListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (listDataFirstSemester.size() > 0) {listDataFirstSemester.clear();}
-                if (listDataSecondSemester.size() > 0) {listDataSecondSemester.clear();}
-                if (listSubject.size() > 0) {listSubject.clear();}
-                for(DataSnapshot ds : snapshot.getChildren()) {
-                    Subject subject = ds.getValue(Subject.class);
-                    if (subject.course == 1 && subject.semester == 1) {
-                        assert subject != null;
-                        listDataFirstSemester.add(subject.name);
-                        listSubject.add(subject);
-                    }
-                    if (subject.course == 1 && subject.semester == 2) {
-                        assert subject != null;
-                        listDataSecondSemester.add(subject.name);
-                        listSubject.add(subject);
-                    }
-                }
-                adapterFirstSemester.notifyDataSetChanged();
-                adapterSecondSemester.notifyDataSetChanged();
-                setOnClickItem();
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        };
-        databaseReference.addValueEventListener(vListener);
-    }
-
-    private void setOnClickItem() {
-        listViewFirstSemester.setOnItemClickListener((adapterView, view, position, l) -> {
-            Subject subject = listSubject.get(position);
-            Intent intent = new Intent(getActivity(), SubjectPageActivity.class);
-            intent.putExtra(Constant.SUBJECT_NAME, subject.name);
-            intent.putExtra(Constant.SUBJECT_DESC, subject.description);
-            startActivity(intent);
-        });
-    }
-
-
-    public void changeColor(View view) {
-        toggleGroup.addOnButtonCheckedListener(new MaterialButtonToggleGroup.OnButtonCheckedListener() {
-            @Override
-            public void onButtonChecked(MaterialButtonToggleGroup group, int checkedId, boolean isChecked) {
-                if (isChecked) {
-                }
-            }
-        });
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.firstSemesterButton:
+                semesterName.setText("Первый семестер");
+                break;
+            case R.id.secondSemesterButton:
+                semesterName.setText("Второй семестер");
+                break;
+        }
     }
 }
