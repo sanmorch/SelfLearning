@@ -2,6 +2,7 @@ package com.example.selflearning.Fragments;
 
 import static com.example.selflearning.Constant.SUBJECT_DESC;
 import static com.example.selflearning.Constant.SUBJECT_ID;
+import static com.example.selflearning.Constant.SUBJECT_KEY;
 import static com.example.selflearning.Constant.SUBJECT_NAME;
 
 import android.content.Intent;
@@ -46,7 +47,6 @@ public class FirstCourseFragment extends Fragment implements View.OnClickListene
 
     // for DB
     private DatabaseReference databaseReference;
-    private String SUBJECT_KEY = "Subjects";
 
     // for listView
     private ListView listView;
@@ -124,7 +124,7 @@ public class FirstCourseFragment extends Fragment implements View.OnClickListene
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.firstSemesterButton:
-                semesterName.setText("Первый семестер");
+                semesterName.setText("Первый семестр");
                 getDataFromDB(1,1);
                 break;
             case R.id.secondSemesterButton:
