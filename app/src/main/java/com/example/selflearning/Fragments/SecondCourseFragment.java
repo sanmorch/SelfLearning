@@ -131,16 +131,13 @@ public class SecondCourseFragment extends Fragment implements View.OnClickListen
     }
 
     private void setOnClickItem() {
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Subject subjectSelected = listSubject.get(i);
-                Intent intent = new Intent(getActivity(), SubjectPageActivity.class);
-                intent.putExtra(SUBJECT_NAME, subjectSelected.name);
-                intent.putExtra(SUBJECT_DESC, subjectSelected.description);
-                intent.putExtra(SUBJECT_ID, subjectSelected.id);
-                startActivity(intent);
-            }
+        listView.setOnItemClickListener((adapterView, view, i, l) -> {
+            Subject subjectSelected = listSubject.get(i);
+            Intent intent = new Intent(getActivity(), SubjectPageActivity.class);
+            intent.putExtra(SUBJECT_NAME, subjectSelected.name);
+            intent.putExtra(SUBJECT_DESC, subjectSelected.description);
+            intent.putExtra(SUBJECT_ID, subjectSelected.id);
+            startActivity(intent);
         });
     }
 }
