@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.nav_log_out:
-                // for not login user automaticaly
+                // for not login user automatically
                 sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("name", "false");

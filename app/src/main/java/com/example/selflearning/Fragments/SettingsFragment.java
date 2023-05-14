@@ -26,9 +26,7 @@ public class SettingsFragment extends Fragment {
     private FirebaseUser user;
     private DatabaseReference reference;
     private String userID;
-    private TextView tvUserName;
-    private TextView tvUserUsername;
-    private TextView tvUserEmail;
+    private TextView tvUserName, tvUserUsername, tvUserEmail, tvUserNameDuble, tvUserUsernameDouble;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,6 +45,8 @@ public class SettingsFragment extends Fragment {
         tvUserName = view.findViewById(R.id.profileUserName);
         tvUserUsername = view.findViewById(R.id.profileUserUsername);
         tvUserEmail = view.findViewById(R.id.profileUserEmail);
+        tvUserNameDuble = view.findViewById(R.id.profileUserNameDuble);
+        tvUserUsernameDouble = view.findViewById(R.id.profileUserUsernameDuble);
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -59,7 +59,9 @@ public class SettingsFragment extends Fragment {
                     String email = userProfile.email;
 
                     tvUserName.setText(name);
+                    tvUserNameDuble.setText(name);
                     tvUserUsername.setText(username);
+                    tvUserUsernameDouble.setText(username);
                     tvUserEmail.setText(email);
                 }
             }

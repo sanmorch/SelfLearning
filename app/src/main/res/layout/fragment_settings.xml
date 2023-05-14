@@ -1,47 +1,234 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/pro"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragments.SettingsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Настройки" />
+        android:layout_height="280dp"
+        android:padding="20dp"
+        android:background="@color/orange_light"
+        >
+        
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileUserPicture"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_default_user"
+            android:background="@drawable/round_circle"
+            android:layout_centerVertical="true"/>
 
-    <TextView
-        android:id="@+id/profileUserName"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/profileUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alexandra"
+            android:textSize="40sp"
+            android:layout_toRightOf="@id/profileUserPicture"
+            android:layout_centerVertical="true"
+            android:fontFamily="serif"
+            android:textColor="@color/white"
+            android:includeFontPadding="false"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/profileUserUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="Username"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:fontFamily="serif"
+            android:layout_toRightOf="@id/profileUserPicture"
+            android:layout_below="@id/profileUserName"
+            android:layout_marginLeft="10dp"
+            />
+
+
+
+    </RelativeLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:padding="20dp"
+        android:layout_marginTop="-100dp">
 
-    <TextView
-        android:id="@+id/profileUserUsername"
-        android:layout_width="wrap_content"
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="125dp"
+            android:layout_weight="1"
+            app:cardElevation="10dp"
+            app:cardBackgroundColor="@color/orange_soft"
+            android:layout_margin="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_raiting"
+                    android:layout_centerHorizontal="true"/>
+                
+                <TextView
+                    android:id="@+id/raiting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 coins"
+                    android:textSize="20sp"
+                    android:includeFontPadding="false"
+                    android:fontFamily="serif"
+                    android:textStyle="bold"
+                    android:layout_centerInParent="true"/>
+
+                <TextView
+                    android:id="@+id/raiting_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="something"
+                    android:textSize="14sp"
+                    android:includeFontPadding="false"
+                    android:fontFamily="serif"
+                    android:textStyle="bold"
+                    android:layout_below="@id/raiting"
+                    android:layout_centerHorizontal="true"/>
+
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="125dp"
+            android:layout_weight="1"
+            app:cardElevation="10dp"
+            app:cardBackgroundColor="@color/orange_soft"
+            android:layout_margin="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_raiting"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:id="@+id/something_else"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 coins"
+                    android:textSize="20sp"
+                    android:includeFontPadding="false"
+                    android:fontFamily="serif"
+                    android:textStyle="bold"
+                    android:layout_centerInParent="true"/>
+
+                <TextView
+                    android:id="@+id/something_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="something"
+                    android:textSize="14sp"
+                    android:includeFontPadding="false"
+                    android:fontFamily="serif"
+                    android:textStyle="bold"
+                    android:layout_below="@id/something_else"
+                    android:layout_centerHorizontal="true"/>
+
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileUserName" />
+        android:orientation="vertical"
+        android:padding="20dp">
 
-    <TextView
-        android:id="@+id/profileUserEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileUserUsername" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@android:color/transparent"
+            android:background="@android:color/transparent"
+            android:hint="Как тебя зовут"
+            android:layout_marginBottom="10dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/profileUserNameDuble"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_name"
+                android:drawablePadding="10dp"
+                android:text="Alexandra"/>
+
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@android:color/transparent"
+            android:background="@android:color/transparent"
+            android:hint="Как нам называть тебя здесь"
+            android:layout_marginBottom="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/profileUserUsernameDuble"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_username"
+                android:drawablePadding="10dp"
+                android:text="username"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@android:color/transparent"
+            android:background="@android:color/transparent"
+            android:hint="Куда отправлять тебе письма "
+            android:layout_marginBottom="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/profileUserEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_email"
+                android:drawablePadding="10dp"
+                android:text="samorozo@mail.ru"/>
+            
+        </com.google.android.material.textfield.TextInputLayout>
+        
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="изменить"/>
+
+
+    </LinearLayout>
+    
+
+
+
+</LinearLayout>
