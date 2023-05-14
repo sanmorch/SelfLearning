@@ -52,6 +52,8 @@
                 android:drawableLeft="@drawable/ic_password"
                 android:drawablePadding="8dp"
                 android:textColor="@color/black"/>
+
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -59,7 +61,7 @@
                 android:id="@+id/login_button"
                 android:onClick="login"
                 android:textSize="18sp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="15dp"
                 android:backgroundTint="@color/orange_extra"
                 app:cornerRadius = "20dp"/>
             <TextView

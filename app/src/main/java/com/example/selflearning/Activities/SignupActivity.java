@@ -1,6 +1,9 @@
 package com.example.selflearning.Activities;
 
+import static com.example.selflearning.Constant.SHARED_PREFS;
+
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -23,6 +26,7 @@ public class SignupActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private EditText edSignUpName, edSignUpEmail, edSignUpUsername, edSignUpPassword;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -97,7 +101,15 @@ public class SignupActivity extends AppCompatActivity {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if(task.isSuccessful()) {
+                                                sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+                                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                                editor.putString("name", "true");
+                                                editor.apply();
+
                                                 Toast.makeText(SignupActivity.this, "Вы успешно зарегистрированы", Toast.LENGTH_SHORT).show();
+                                                mAuth.signInWithEmailAndPassword(email,password);
+                                                Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                                                startActivity(intent);
                                             }
                                             else {
                                                 Toast.makeText(SignupActivity.this, "Регистрация не удалась", Toast.LENGTH_SHORT).show();
