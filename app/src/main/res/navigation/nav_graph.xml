@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.selflearning.Views.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.selflearning.Views.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.selflearning.Views.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.selflearning.Fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/firstCourseFragment"
+        android:name="com.example.selflearning.Fragments.FirstCourseFragment"
+        android:label="fragment_first_course"
+        tools:layout="@layout/fragment_first_course" >
+        <action
+            android:id="@+id/action_firstCourseFragment_to_subjectFragment"
+            app:destination="@id/subjectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondCourseFragment"
+        android:name="com.example.selflearning.Fragments.SecondCourseFragment"
+        android:label="fragment_second_course"
+        tools:layout="@layout/fragment_second_course" >
+        <action
+            android:id="@+id/action_secondCourseFragment_to_subjectFragment"
+            app:destination="@id/subjectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdCouseFragment"
+        android:name="com.example.selflearning.Fragments.ThirdCouseFragment"
+        android:label="fragment_third_couse"
+        tools:layout="@layout/fragment_third_couse" >
+        <action
+            android:id="@+id/action_thirdCouseFragment_to_subjectFragment"
+            app:destination="@id/subjectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fourthCourseFragment"
+        android:name="com.example.selflearning.Fragments.FourthCourseFragment"
+        android:label="fragment_fourth_course"
+        tools:layout="@layout/fragment_fourth_course" >
+        <action
+            android:id="@+id/action_fourthCourseFragment_to_subjectFragment"
+            app:destination="@id/subjectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.example.selflearning.Fragments.AboutUsFragment"
+        android:label="fragment_about_us"
+        tools:layout="@layout/fragment_about_us" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.selflearning.Fragments.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.example.selflearning.Views.QuizFragment"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz" >
+        <action
+            android:id="@+id/action_quizFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.selflearning.Views.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" >
+        <action
+            android:id="@+id/action_resultFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_resultFragment_to_firstCourseFragment"
+            app:destination="@id/firstCourseFragment" />
+        <action
+            android:id="@+id/action_resultFragment_to_secondCourseFragment"
+            app:destination="@id/secondCourseFragment" />
+        <action
+            android:id="@+id/action_resultFragment_to_thirdCouseFragment"
+            app:destination="@id/thirdCouseFragment" />
+        <action
+            android:id="@+id/action_resultFragment_to_fourthCourseFragment"
+            app:destination="@id/fourthCourseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.selflearning.Views.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_settingsFragment2"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_aboutUsFragment"
+            app:destination="@id/aboutUsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_firstCourseFragment"
+            app:destination="@id/firstCourseFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_thirdCouseFragment"
+            app:destination="@id/thirdCouseFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_fourthCourseFragment"
+            app:destination="@id/fourthCourseFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_secondCourseFragment"
+            app:destination="@id/secondCourseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/subjectFragment"
+        android:name="com.example.selflearning.Views.SubjectFragment"
+        android:label="fragment_subject"
+        tools:layout="@layout/fragment_subject" >
+        <action
+            android:id="@+id/action_subjectFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
+    </fragment>
+</navigation>

@@ -14,7 +14,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="280dp"
+        android:layout_height="300dp"
         android:padding="20dp"
         android:background="@color/orange_light"
         >
@@ -202,40 +202,7 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:boxBackgroundColor="@android:color/transparent"
-            android:background="@android:color/transparent"
-            android:hint="Куда отправлять тебе письма "
-            android:layout_marginBottom="10dp">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/profileUserEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_email"
-                android:drawablePadding="10dp" />
-            
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:boxBackgroundColor="@android:color/transparent"
-            android:background="@android:color/transparent"
-            android:hint="Введите новый пароль"
-            android:layout_marginBottom="10dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/profileUserPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_password"
-                android:drawablePadding="10dp"
-                android:inputType="textPassword"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 

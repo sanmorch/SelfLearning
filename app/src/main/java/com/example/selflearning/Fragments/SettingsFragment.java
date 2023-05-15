@@ -60,7 +60,6 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
         userID = user.getUid();
         tvUserName = view.findViewById(R.id.profileUserName);
         tvUserUsername = view.findViewById(R.id.profileUserUsername);
-        tvUserEmail = view.findViewById(R.id.profileUserEmail);
         tvUserNameDouble = view.findViewById(R.id.profileUserNameDouble);
         tvUserUsernameDouble = view.findViewById(R.id.profileUserUsernameDouble);
         updateDataButton = view.findViewById(R.id.updateData);
@@ -84,7 +83,6 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
                     tvUserNameDouble.setText(USER_NAME);
                     tvUserUsername.setText(USER_USERNAME);
                     tvUserUsernameDouble.setText(USER_USERNAME);
-                    tvUserEmail.setText(USER_EMAIL);
                 }
             }
 
@@ -105,26 +103,12 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
     }
 
     public void updateData() {
-        if (isNameChanged() || isUsernameChanged() || isEmailChanged()) {
+        if (isNameChanged() || isUsernameChanged()) {
             Toast.makeText(getActivity(), "Данные были обновлены", Toast.LENGTH_LONG).show();
             update(reference);
             }
     }
 
-
-
-    private boolean isEmailChanged() {
-        if (!USER_EMAIL.equals(tvUserEmail.getEditableText().toString())) {
-            user.updateEmail(tvUserEmail.getEditableText().toString()).addOnCompleteListener(task -> {
-                if (task.isSuccessful()) {
-                    reference.child(userID).child("email").setValue(tvUserEmail.getText().toString());
-                    logOut();
-                } else
-                    Toast.makeText(getActivity(),task.getException().getMessage(), Toast.LENGTH_LONG).show();
-            });
-            return true;
-        } else return false;
-    }
 
     private boolean isUsernameChanged() {
         if (!USER_USERNAME.equals(tvUserUsernameDouble.getEditableText().toString())) {
