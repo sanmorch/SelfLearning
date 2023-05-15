@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragments.SettingsFragment">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -27,7 +31,6 @@
             android:id="@+id/profileUserName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Alexandra"
             android:textSize="40sp"
             android:layout_toRightOf="@id/profileUserPicture"
             android:layout_centerVertical="true"
@@ -42,7 +45,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:includeFontPadding="false"
-            android:text="Username"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:fontFamily="serif"
@@ -172,12 +174,11 @@
             android:layout_marginBottom="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/profileUserNameDuble"
+                android:id="@+id/profileUserNameDouble"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_name"
-                android:drawablePadding="10dp"
-                android:text="Alexandra"/>
+                android:drawablePadding="10dp" />
 
 
 
@@ -192,12 +193,11 @@
             android:layout_marginBottom="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/profileUserUsernameDuble"
+                android:id="@+id/profileUserUsernameDouble"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_username"
-                android:drawablePadding="10dp"
-                android:text="username"/>
+                android:drawablePadding="10dp" />
 
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -215,20 +215,41 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_email"
-                android:drawablePadding="10dp"
-                android:text="samorozo@mail.ru"/>
+                android:drawablePadding="10dp" />
             
         </com.google.android.material.textfield.TextInputLayout>
-        
-        <Button
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="изменить"/>
+            app:boxBackgroundColor="@android:color/transparent"
+            android:background="@android:color/transparent"
+            android:hint="Введите новый пароль"
+            android:layout_marginBottom="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/profileUserPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_password"
+                android:drawablePadding="10dp"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+
+        
+        <Button
+            android:id="@+id/updateData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="изменить" />
+
 
 
     </LinearLayout>
-    
 
 
-
-</LinearLayout>
+</ScrollView>
