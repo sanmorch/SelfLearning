@@ -18,7 +18,6 @@ import com.example.selflearning.DBobjects.User;
 import com.example.selflearning.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -90,36 +89,30 @@ public class SignupActivity extends AppCompatActivity {
         }
 
         mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()) {
-                            User user = new User(name, email, username);
-                            FirebaseDatabase.getInstance().getReference("Users")
-                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<Void> task) {
-                                            if(task.isSuccessful()) {
-                                                sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-                                                SharedPreferences.Editor editor = sharedPreferences.edit();
-                                                editor.putString("name", "true");
-                                                editor.apply();
+                .addOnCompleteListener(task -> {
+                    if(task.isSuccessful()) {
+                        User user = new User(name, email, username);
+                        FirebaseDatabase.getInstance().getReference("Users")
+                                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                .setValue(user).addOnCompleteListener(task1 -> {
+                                    if(task.isSuccessful()) {
+                                        sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+                                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                                        editor.putString("name", "true");
+                                        editor.apply();
 
-                                                Toast.makeText(SignupActivity.this, "Вы успешно зарегистрированы", Toast.LENGTH_SHORT).show();
-                                                mAuth.signInWithEmailAndPassword(email,password);
-                                                Intent intent = new Intent(SignupActivity.this, MainActivity.class);
-                                                startActivity(intent);
-                                            }
-                                            else {
-                                                Toast.makeText(SignupActivity.this, "Регистрация не удалась", Toast.LENGTH_SHORT).show();
-                                            }
-                                        }
-                                    });
-                        }
-                        else {
-                            Toast.makeText(SignupActivity.this, "Регистрация не удалась", Toast.LENGTH_SHORT).show();
-                        }
+                                        Toast.makeText(SignupActivity.this, "Вы успешно зарегистрированы", Toast.LENGTH_SHORT).show();
+                                        mAuth.signInWithEmailAndPassword(email,password);
+                                        Intent intent = new Intent(SignupActivity.this, MainActivity2.class);
+                                        startActivity(intent);
+                                    }
+                                    else {
+                                        Toast.makeText(SignupActivity.this, task1.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                    }
+                    else {
+                        Toast.makeText(SignupActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }

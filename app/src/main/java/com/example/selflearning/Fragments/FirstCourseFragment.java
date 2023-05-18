@@ -40,13 +40,14 @@ import java.util.List;
 
 public class FirstCourseFragment extends Fragment implements View.OnClickListener {
 
-    // for buttons
+    // for buttons comments
     protected MaterialButtonToggleGroup toggleGroup;
     private Button firstSemesterButton, secondSemesterButton;
     private TextView semesterName;
 
     // for DB
     private DatabaseReference databaseReference;
+
 
     // for listView
     private ListView listView;
@@ -135,16 +136,14 @@ public class FirstCourseFragment extends Fragment implements View.OnClickListene
     }
 
     private void setOnClickItem() {
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Subject subjectSelected = listSubject.get(i);
-                Intent intent = new Intent(getActivity(), SubjectPageActivity.class);
-                intent.putExtra(SUBJECT_NAME, subjectSelected.name);
-                intent.putExtra(SUBJECT_DESC, subjectSelected.description);
-                intent.putExtra(SUBJECT_ID, subjectSelected.id);
-                startActivity(intent);
-            }
+        listView.setOnItemClickListener((adapterView, view, i, l) -> {
+            String id = databaseReference.push().getKey();
+            Subject subjectSelected = listSubject.get(i);
+            Intent intent = new Intent(getActivity(), SubjectPageActivity.class);
+            intent.putExtra(SUBJECT_NAME, subjectSelected.name);
+            intent.putExtra(SUBJECT_DESC, subjectSelected.description);
+            intent.putExtra(SUBJECT_ID, subjectSelected.id);
+            startActivity(intent);
         });
     }
 }

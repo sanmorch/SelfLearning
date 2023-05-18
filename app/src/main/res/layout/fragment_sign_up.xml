@@ -75,22 +75,20 @@
                 android:drawablePadding="8dp"
                 android:textColor="@color/black"/>
             <Button
+                android:id="@+id/signup_button"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="Зарегистрироваться"
-                android:id="@+id/signup_button"
                 android:textSize="18sp"
-                android:onClick="signUp"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/orange_extra"
                 app:cornerRadius = "20dp"/>
             <TextView
+                android:id="@+id/loginRedirectText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/loginRedirectText"
                 android:text="Уже есть профиль"
                 android:layout_gravity="center"
-                android:onClick="goToLogin"
                 android:padding="8dp"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/orange_extra"
