@@ -1,4 +1,0 @@
-SOLVED bug1 -- page FirstCourse doesn't show all items, it shows only one
-SOLVED bug2 -- page FirstCourse shows only one listView (first course, first sem), like it doesn't see second semester. Maybe cut first and second sem on two screens (кнопка переключатель сверху, которая записывает в переменную 1 или 2?)
-
-task1 -- connect buttons on FirstCourse with listView 

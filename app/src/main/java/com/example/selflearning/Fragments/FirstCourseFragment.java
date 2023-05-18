@@ -40,7 +40,7 @@ import java.util.List;
 
 public class FirstCourseFragment extends Fragment implements View.OnClickListener {
 
-    // for buttons comments
+    // for buttons comment
     protected MaterialButtonToggleGroup toggleGroup;
     private Button firstSemesterButton, secondSemesterButton;
     private TextView semesterName;
